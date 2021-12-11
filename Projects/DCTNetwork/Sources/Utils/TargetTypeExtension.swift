@@ -9,12 +9,4 @@ extension TargetType {
         }
         return url
     }
-    
-    public var task: Task {
-        .requestPlain
-    }
-    
-    var version: String {
-        "v1"
-    }
 }
