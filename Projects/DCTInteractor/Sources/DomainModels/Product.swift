@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Product {
-    var id: String
-    var title: String
-    var description: String
-    var price: Double
-    var imageUrl: String
+public struct Product {
+    public var id: String
+    public var title: String
+    public var description: String
+    public var price: Double
+    public var imageUrl: String
 }

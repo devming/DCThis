@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-enum ProductService {
+public enum ProductService {
     // 상품 가져오는 API
     case fetchProducts
 }

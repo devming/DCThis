@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct ProductResponse: Codable {
+public struct ProductResponse: Codable {
     
 }

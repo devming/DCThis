@@ -7,10 +7,21 @@
 //
 
 import Foundation
+import Combine
+import Moya
+import DCTNetwork
 
 public class MainInteractorImp: MainInteractor {
-    public func fetchProducts() {
-        
+    lazy public var productProvider: MoyaProvider<ProductService> = {
+        return MoyaProvider<ProductService>()
+    }()
+    
+    public func fetchProducts() -> AnyPublisher<[Product], MoyaError> {
+        return productProvider
+            .requestPublisher(
+                ProductService.fetchProducts
+            )
+            .eraseToAnyPublisher()
     }
     
     

@@ -7,10 +7,13 @@
 //
 
 import Foundation
+import Combine
+import Moya
 
 public class MainInteractorMock: MainInteractor {
-    public func fetchProducts() {
-        
+    public func fetchProducts() -> AnyPublisher<[Product], MoyaError> {
+        return Just([Product]())
+            .eraseToAnyPublisher()
     }
     
     

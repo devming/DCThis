@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import Combine
+import Moya
+import DCTNetwork
 
 public protocol MainInteractor {
     
-    func fetchProducts() 
+    var productProvider: MoyaProvider<ProductService> { get }
+    
+    func fetchProducts() -> AnyPublisher<[Product], MoyaError>
 }
