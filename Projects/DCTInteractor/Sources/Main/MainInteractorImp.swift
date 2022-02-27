@@ -8,8 +8,7 @@
 
 import Foundation
 import Combine
-import Moya
-import DCTNetwork
+//import DCTNetwork
 
 public class MainInteractorImp: MainInteractor {
     lazy public var productProvider: MoyaProvider<ProductService> = {
@@ -18,9 +17,9 @@ public class MainInteractorImp: MainInteractor {
     
     public func fetchProducts() -> AnyPublisher<[Product], MoyaError> {
         return productProvider
-            .requestPublisher(
-                ProductService.fetchProducts
-            )
+            .requestPublisher(ProductService.fetchProducts)
+//            .map { $0.res}
+            .map([Product].self, atKeyPath: nil)
             .eraseToAnyPublisher()
     }
     
